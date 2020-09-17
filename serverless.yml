@@ -37,6 +37,7 @@ package:
     - .gitignore
     - .git/**
     - package-lock.json
+    - app.py
 
 functions:
   math:
