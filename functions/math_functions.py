@@ -29,23 +29,23 @@ def math(request):
     params = payload['data']
     result = 0
     if f_type == 'fibonacci':
-        if not SingleParamValidator(params):
+        if not SingleParamValidator.valid(params):
             return {'error': 'invalid function params'}, 400, headers
         result = fibonacci(params['n'])
     elif f_type == 'fibonacci_naive':
-        if not SingleParamValidator(params):
+        if not SingleParamValidator.valid(params):
             return {'error': 'invalid function params'}, 400, headers
         result = fibonacci_naive(params['n'])
     elif f_type == 'factorial':
-        if not SingleParamValidator(params):
+        if not SingleParamValidator.valid(params):
             return {'error': 'invalid function params'}, 400, headers
         result = factorial(params['n'])
     elif f_type == 'ackermann':
-        if not DualParamValidator(params):
+        if not DualParamValidator.valid(params):
             return {'error': 'invalid function params'}, 400, headers
         result = ackermann(params['m'], params['n'])
     else:
-        if not DualParamValidator(params):
+        if not DualParamValidator.valid(params):
             return {'error': 'invalid function params'}, 400, headers
         result = ackermann_naive(params['m'], params['n'])
 
