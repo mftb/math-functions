@@ -4,6 +4,7 @@ from adapters.validators.param_validator import DualParamValidator
 from adapters.validators.function_type_validator import FunctionTypeValidator
 from core.fibonacci import fibonacci, fibonacci_naive
 from core.factorial import factorial
+from core.ackermann import ackermann_naive, ackermann
 
 
 def math(request):
@@ -42,10 +43,10 @@ def math(request):
     elif f_type == 'ackermann':
         if not DualParamValidator(params):
             return {'error': 'invalid function params'}, 400, headers
-        result = fibonacci(params['n'])
+        result = ackermann(params['m'], params['n'])
     else:
         if not DualParamValidator(params):
             return {'error': 'invalid function params'}, 400, headers
-        result = fibonacci(params['n'])
+        result = ackermann_naive(params['m'], params['n'])
 
     return {'result': result}, 200, headers
