@@ -91,6 +91,9 @@ You need to copy the GCP project service account key to ~/.gcloud and name it \<
 
 Then, run the following commands to deploy it to GCP:
 ```
+virtualenv venv -p python3.7
+source venv/bin/activate
+pip install -r requirements.txt
 npm install
 serverless deploy --stage dev --project <project>
 ```
