@@ -85,6 +85,8 @@ Response
 ```
 
 ## How to deploy:
+\<project\> is a placeholder for the target GCP project name.
+
 You need to copy the GCP project service account key to ~/.gcloud and name it \<project\>.json
 
 Then, run the following commands to deploy it to GCP:
