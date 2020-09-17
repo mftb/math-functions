@@ -1,3 +1,8 @@
+node_modules
+package-lock.json
+config.*.yml
+.serverless
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
