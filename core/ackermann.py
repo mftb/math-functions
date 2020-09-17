@@ -15,7 +15,7 @@ def ackermann_naive(m, n):
 
 
 # memoized solution with more recursive base cases
-def ackermann(m, n, cache={0: {0: 0, 1: 2}, 1: {0: 2, 1: 3}}):
+def ackermann(m, n, cache={0: {0: 1, 1: 2}, 1: {0: 2, 1: 3}}):
     if m in cache and n in cache[m]:
         return cache[m][n]
     else:
